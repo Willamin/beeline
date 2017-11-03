@@ -11,14 +11,14 @@ dependencies:
     github: willamin/beeline
 ```
 
-Use the `Beeline.config` method to define your beeline.
-Compile your app using `shards build --release`.
-Set your prompt accordingly.
-eg. `export PS1="\$(path/to/your/beeline-app)"
-
 ## Usage
 
-TODO: Write usage instructions here
+1. Use the `Beeline.config` method to define your beeline. (see [examples](examples/) for inspiration)
+2. Compile your app using `shards build --release`.
+3. Set your prompt accordingly.
+  ```bash
+  export PS1="\$(path/to/your/beeline-app)")
+  ```
 
 ## Development
 
@@ -26,7 +26,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/beeline/fork )
+1. Fork it ( https://github.com/Willamin/beeline/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -34,4 +34,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Will Lewis - creator, maintainer
+- Willamin ( https://github.com/Willamin ) Will Lewis - creator, maintainer
