@@ -23,5 +23,4 @@ Beeline::Beeline.config do
   fore :blue
   back :clear
   separator
-  padding
 end

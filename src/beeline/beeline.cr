@@ -1,8 +1,5 @@
 module Beeline
   class Beeline
-    # BASH_STOP_COUNTING  = "\\["
-    # BASH_START_COUNTING = "\\]"
-    # ESCAPE              = "\\e["
     BASH_STOP_COUNTING  = "\x01"
     BASH_START_COUNTING = "\x02"
     ESCAPE              = "\x1B["
@@ -63,13 +60,15 @@ module Beeline
     end
 
     def <<(thing : String)
+      @io << BASH_STOP_COUNTING
       @io << escape("1;3" + COLORS[@fore] + "m")
       @io << escape("1;4" + COLORS[@back] + "m")
+      @io << BASH_START_COUNTING
       @io << thing
     end
 
     def escape(code : String)
-      BASH_STOP_COUNTING + ESCAPE + code + BASH_START_COUNTING
+      ESCAPE + code
     end
 
     def reset
