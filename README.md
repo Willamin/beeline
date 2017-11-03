@@ -2,12 +2,19 @@
 
 ## Installation
 
-```shell
-$ git clone https://github.com/Willamin/beeline.git
-$ cd beeline
-$ shards build --release
-$ export PS1="\$(beeline)"
+Create a new Crystal app.
+Add this to your app's shard.yml:
+
+```yaml
+dependencies:
+  beeline:
+    github: willamin/beeline
 ```
+
+Use the `Beeline.config` method to define your beeline.
+Compile your app using `shards build --release`.
+Set your prompt accordingly.
+eg. `export PS1="\$(path/to/your/beeline-app)"
 
 ## Usage
 
