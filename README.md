@@ -1,4 +1,4 @@
-# beeline - a better powerline
+# :bee: beeline - a better powerline
 
 ## Installation
 
