@@ -43,6 +43,10 @@ module Beeline
       self << " "
     end
 
+    def separator_empty
+      self << ""
+    end
+
     def separator
       self << ""
     end
@@ -60,11 +64,17 @@ module Beeline
     end
 
     def <<(thing : String)
-      @io << BASH_STOP_COUNTING
-      @io << escape("1;3" + COLORS[@fore] + "m")
-      @io << escape("1;4" + COLORS[@back] + "m")
-      @io << BASH_START_COUNTING
+      dont_count do
+        @io << escape("1;3" + COLORS[@fore] + "m")
+        @io << escape("1;4" + COLORS[@back] + "m")
+      end
       @io << thing
+    end
+
+    def dont_count
+      @io << BASH_STOP_COUNTING
+      yield
+      @io << BASH_START_COUNTING
     end
 
     def escape(code : String)
@@ -72,7 +82,9 @@ module Beeline
     end
 
     def reset
-      @io << escape("0m")
+      dont_count do
+        @io << escape("0m")
+      end
     end
   end
 end
