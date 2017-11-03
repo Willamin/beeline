@@ -1,6 +1,4 @@
-STDIN.sync = true
-STDOUT.sync = true
-STDERR.sync = true
+STDIN.blocking = true
 
 class Beeline
   VERSION = "0.1.0"
