@@ -42,6 +42,18 @@ class Beeline
     @back = color
   end
 
+  def color_from_index(color_index : Int)
+    COLORS.to_h.key(color_index.to_s)
+  end
+
+  def fore_index(color_index : Int)
+    fore(color_from_index(color_index))
+  end
+
+  def back_index(color_index : Int)
+    back(color_from_index(color_index))
+  end
+
   def padding
     self << " "
   end
