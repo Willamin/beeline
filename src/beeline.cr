@@ -34,11 +34,11 @@ class Beeline
     b.reset
   end
 
-  def fore(color)
+  def fore(color : Symbol)
     @fore = color
   end
 
-  def back(color)
+  def back(color : Symbol)
     @back = color
   end
 
@@ -46,11 +46,11 @@ class Beeline
     COLORS.to_h.key(color_index.to_s)
   end
 
-  def fore_index(color_index : Int)
+  def fore(color_index : Int)
     fore(color_from_index(color_index))
   end
 
-  def back_index(color_index : Int)
+  def back(color_index : Int)
     back(color_from_index(color_index))
   end
 
