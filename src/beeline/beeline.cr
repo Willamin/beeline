@@ -1,9 +1,13 @@
 module Beeline
   class Beeline
-    BASH_STOP_COUNTING  = "\\["
-    BASH_START_COUNTING = "\\]"
-    ESCAPE              = "\\e["
-    COLORS              = {
+    # BASH_STOP_COUNTING  = "\\["
+    # BASH_START_COUNTING = "\\]"
+    # ESCAPE              = "\\e["
+    BASH_STOP_COUNTING  = "\x01"
+    BASH_START_COUNTING = "\x02"
+    ESCAPE              = "\x1B["
+
+    COLORS = {
       black:       "0",
       red:         "1",
       green:       "2",

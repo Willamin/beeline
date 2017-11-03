@@ -11,11 +11,17 @@ Beeline::Beeline.config do
   fore :black
   back :blue
   padding
-  ellipsis
+
+  dirs = ENV["PWD"].split("/")[1..-1]
+  if dirs.size > 1
+    ellipsis
+  end
   print "/"
-  print Dir.current.split("/")[-1]
+  print dirs[-1]
+
   padding
   fore :blue
   back :clear
   separator
+  padding
 end

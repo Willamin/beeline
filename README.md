@@ -1,10 +1,13 @@
-# beeline
-
-TODO: Write a description here
+# beeline - a better powerline
 
 ## Installation
 
-TODO: Write installation instructions here
+```shell
+$ git clone https://github.com/Willamin/beeline.git
+$ cd beeline
+$ shards build
+$ export PS1="\$(beeline)"
+```
 
 ## Usage
 
