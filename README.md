@@ -5,7 +5,7 @@
 ```shell
 $ git clone https://github.com/Willamin/beeline.git
 $ cd beeline
-$ shards build
+$ shards build --release
 $ export PS1="\$(beeline)"
 ```
 
