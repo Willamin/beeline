@@ -9,7 +9,7 @@ end
 
 Beeline::Beeline.config do
   fore :black
-  back :blue
+  back :yellow
   padding
 
   dirs = ENV["PWD"].split("/")[1..-1]
@@ -20,7 +20,14 @@ Beeline::Beeline.config do
   print dirs[-1]
 
   padding
-  fore :blue
+
+  fore :black
+  back :yellow
+  separator_empty
+
+  fore :yellow
   back :clear
   separator
+
+  separator_empty
 end
