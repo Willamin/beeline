@@ -1,3 +1,8 @@
+class WTThree
+  def go(destination)
+    "walkthrough 3/5" >> "Adding a simple beeline program to #{destination}/src/mybeeline.cr."
+    file = File.open(destination + "/src/mybeeline.cr", mode = "w")
+    file << <<-EXAMPLE
 require "beeline"                     # require the beeline library
 Beeline.config do                     # Initialize the configuration
   fore :black                         # set the foreground color to black
@@ -19,3 +24,9 @@ Beeline.config do                     # Initialize the configuration
   separator_empty                     # add an empty separator character
   padding                             # add some padding
 end                                   #
+EXAMPLE
+    file.close
+
+    "walkthrough 3/5" >> "Please read it yourself after this guide."
+  end
+end

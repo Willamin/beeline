@@ -1,5 +1,3 @@
-STDIN.blocking = true
-
 class Beeline
   VERSION = "0.1.0"
 
@@ -29,6 +27,7 @@ class Beeline
   @back = :clear
 
   def self.config
+    STDIN.blocking = true
     b = Beeline.new
     with b yield
     b.reset

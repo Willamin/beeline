@@ -5,8 +5,8 @@ authors:
   - Will Lewis <will@wflewis.com>
 
 targets:
-  beeline:
-    main: src/beeline.cr
+  beeliner:
+    main: src/cli.cr
 
 crystal: 0.23.1
 
