@@ -2,7 +2,9 @@
 
 ## Installation - TL;DR version
 
-TODO
+```bash
+curl -fsSL https://raw.githubusercontent.com/Willamin/beeline/master/beeline-installer | bash
+```
 
 ## Installation - for Crystal veterans
 
