@@ -1,6 +1,10 @@
 # :bee: beeline - a better powerline
 
-## Installation
+## Installation - TL;DR version
+
+TODO
+
+## Installation - for Crystal veterans
 
 Create a new Crystal app.
 Add this to your app's shard.yml:
