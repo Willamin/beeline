@@ -6,11 +6,11 @@ BEELINER_LINK="https://github.com/Willamin/beeline/releases/download/v0.2.0/beel
 BEELINER_TAR_NAME="beeliner.tar.gz"
 BEELINER_NAME="beeliner"
 TEMP="/tmp/beeline-installer"
-cd TEMP
-curl -s BEELINER_LINK -o BEELINER_TAR_NAME
+cd $TEMP
+curl -s $BEELINER_LINK -o $BEELINER_TAR_NAME
 
-tar xzf BEELINER_TAR_NAME
-chmod +x BEELINER_NAME
+tar xzf $BEELINER_TAR_NAME
+chmod +x $BEELINER_NAME
 $(BEELINER_NAME)
 
 echo -n "Want to remove the installation guide? (y/n) "
