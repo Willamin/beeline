@@ -5,7 +5,7 @@ set -euxo pipefail
 BEELINER_LINK="https://github.com/Willamin/beeline/releases/download/v0.2.0/beeliner.tar.gz"
 BEELINER_TAR_NAME="beeliner.tar.gz"
 BEELINER_NAME="beeliner"
-TEMP=$(mktemp)
+TEMP="/tmp/beeline-installer"
 cd TEMP
 curl -s BEELINER_LINK -o BEELINER_TAR_NAME
 
