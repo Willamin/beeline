@@ -18,12 +18,6 @@ module BLine::Colors
   end
   {% end %}
 
-  {% for color in COLORS %}
-    def {{color.id}}
-      Color::{{color.capitalize.id}}
-    end
-  {% end %}
-
   {% for layer in LAYERS %}
     def {{layer.id}}(color : Color)
       @{{layer.id}} = color
@@ -34,3 +28,7 @@ module BLine::Colors
     escape("1;" + layer.value.to_s + color.value.to_s + "m")
   end
 end
+
+{% for color in BLine::Colors::COLORS %}
+{{color.capitalize.id}} = BLine::Colors::Color::{{color.capitalize.id}}
+{% end %}
