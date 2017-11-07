@@ -64,3 +64,7 @@ class Beeline
     end
   end
 end
+
+{% for color in BLine::Colors::COLORS %}
+{{color.capitalize.id}} = BLine::Colors::Color::{{color.capitalize.id}}
+{% end %}

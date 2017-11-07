@@ -28,7 +28,3 @@ module BLine::Colors
     escape("1;" + layer.value.to_s + color.value.to_s + "m")
   end
 end
-
-{% for color in BLine::Colors::COLORS %}
-{{color.capitalize.id}} = BLine::Colors::Color::{{color.capitalize.id}}
-{% end %}
