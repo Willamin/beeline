@@ -10,9 +10,11 @@ Beeline.config do                     # Initialize the configuration
   print "/"                           # print a slash
   print dirs[-1]                      # print the directory name
   padding                             # add some padding
-  fore black                          # set the foreground color to black
-  back yellow                         # set the background color to yellow
-  triangle_right_empty                # add an empty separator character
+  temp do                             #
+    fore black                        # set the foreground color to black
+    back yellow                       # set the background color to yellow
+    triangle_right_empty              # add an empty separator character
+  end                                 #
   fore yellow                         # .set the foreground color to yellow
   back clear                          # set the background color to clear
   triangle_right                      # add a full separator character
