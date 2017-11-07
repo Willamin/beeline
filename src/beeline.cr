@@ -26,6 +26,16 @@ class Beeline
     b.reset
   end
 
+  def temp
+    current_fore = @fore
+    current_back = @back
+    current_mod = @mod
+    yield
+    @fore = current_fore
+    @back = current_back
+    @mod = current_mod
+  end
+
   def print(thing)
     self << thing
   end
