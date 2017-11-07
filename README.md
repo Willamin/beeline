@@ -1,12 +1,6 @@
 # :bee: beeline - a better powerline
 
-## Installation - TL;DR version
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Willamin/beeline/master/beeline-installer | bash
-```
-
-## Installation - for Crystal veterans
+## Installation
 
 Create a new Crystal app.
 Add this to your app's shard.yml:

@@ -1,30 +1,23 @@
+require "./beeline/*"
+
 class Beeline
-  VERSION = "0.2.0"
+  VERSION = "0.3.0"
+
+  include BLine::Symbols
+  include BLine::Colors
 
   BASH_STOP_COUNTING  = "\x01"
   BASH_START_COUNTING = "\x02"
   ESCAPE              = "\x1B["
 
-  COLORS = {
-    black:       "0",
-    red:         "1",
-    green:       "2",
-    yellow:      "3",
-    blue:        "4",
-    magenta:     "5",
-    cyan:        "6",
-    white:       "7",
-    twofiftysix: "8",
-    clear:       "9",
-  }
-
   @io : IO
   @io = STDOUT
 
-  @fore : Symbol
-  @fore = :clear
-  @back : Symbol
-  @back = :clear
+  @fore : Color = Color::Clear
+  @back : Color = Color::Clear
+
+  @mod : Int32
+  @mod = 0
 
   def self.config
     STDIN.blocking = true
@@ -33,54 +26,14 @@ class Beeline
     b.reset
   end
 
-  def fore(color : Symbol)
-    @fore = color
-  end
-
-  def back(color : Symbol)
-    @back = color
-  end
-
-  def color_from_index(color_index : Int)
-    COLORS.to_h.key(color_index.to_s)
-  end
-
-  def fore(color_index : Int)
-    fore(color_from_index(color_index))
-  end
-
-  def back(color_index : Int)
-    back(color_from_index(color_index))
-  end
-
-  def padding
-    self << " "
-  end
-
-  def separator_empty
-    self << ""
-  end
-
-  def separator
-    self << ""
-  end
-
-  def ellipsis
-    self << "…"
-  end
-
-  def newline
-    self << "\n"
-  end
-
   def print(thing)
     self << thing
   end
 
   def <<(thing : String)
     dont_count do
-      @io << escape("1;3" + COLORS[@fore] + "m")
-      @io << escape("1;4" + COLORS[@back] + "m")
+      @io << color_escape_code(Layer::Fore, @fore)
+      @io << color_escape_code(Layer::Back, @back)
     end
     @io << thing
   end
