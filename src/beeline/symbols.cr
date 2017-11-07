@@ -40,4 +40,10 @@ module BLine::Symbols
   def newline
     self << "\n"
   end
+
+  def pad_around
+    padding
+    yield
+    padding
+  end
 end
